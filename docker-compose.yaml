@@ -2,7 +2,7 @@ version: '3.3'
 services:
   nginx_proxy:
     image: jwilder/nginx-proxy
-      restart: always
+    restart: always
     ports: 
       - 80:80
   static_images:
