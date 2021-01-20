@@ -5,6 +5,8 @@ services:
     restart: always
     ports: 
       - 80:80
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
   static_images:
     image: nginx:1.19.6
     restart: always
