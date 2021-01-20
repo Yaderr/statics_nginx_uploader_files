@@ -3,7 +3,8 @@ services:
   nginx_proxy:
     image:
       restart: always
-    ports: 80:80
+    ports: 
+      - 80:80
   static_images:
     image: nginx:1.19.6
     restart: always
