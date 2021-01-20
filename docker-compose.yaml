@@ -15,7 +15,7 @@ services:
     environment: 
       - VIRTUAL_HOST=
   file_uploader:
-    build: ./upload_cdn
+    build: ./uploads
     restart: always
     ports:
       - 3000:3000
