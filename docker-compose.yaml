@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  nginx_proxy:
+    image:
+      restart: always
+    ports: 80:80
+  static_images:
+    image: nginx:1.19.6
+    restart: always
+    expose:
+      - 80
+    volumes: 
+      - ./static/statics:/usr/share/nginx/html/
+    environment: 
+      - VIRTUAL_HOST=
+  file_uploader:
+    build: ./upload_cdn
+    restart: always
+    ports:
+      - 3000:3000
+    volumes: 
+      - /static/statics:/file_uploader/statics/
